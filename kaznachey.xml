@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<install version="1.5" type="plugin" group="vmpayment" >
+    <name>Kaznachey Payment</name>
+    <creationDate>March 2014</creationDate>
+    <author>kaznachey</author>
+    <authorUrl>http://kaznachey.ua</authorUrl>
+    <copyright>kaznachey.ua</copyright>
+    <license></license>
+    <version>1.1.0</version>
+    <description><![CDATA[kaznachey - универсальная система приема платежей. ]]></description>
+    <languages>
+	<language tag="en-GB">en-GB.plg_vmpayment_kaznachey.ini</language>
+	<language tag="ru-RU">ru-RU.plg_vmpayment_kaznachey.ini</language>
+    </languages>
+    <files>
+	<filename plugin="kaznachey">kaznachey.php</filename>
+	<filename>index.html</filename>
+	<filename>kaznachey.png</filename>
+	<filename>result.php</filename>
+	<filename>fail.php</filename>
+	<filename>success.php</filename>
+    </files>
+    <params addpath="/administrator/components/com_virtuemart/elements">
+	<param type="vmjpluginwarning" />
+	<param	name="payment_logos" type="vmfiles" label="VMPAYMENT_STANDARD_LOGOS"
+		description="VMPAYMENT_STANDARD_LOGOS_DESC"
+		directory="/plugins/vmpayment/kaznachey"
+		default="kaznachey.png" hide_default="1" hide_none="1"
+		stripext="0"   exclude=".*\.(php|html|xml|wsdl)" />
+	<param type="text" name="merchant_id" size="50" label="VMPAYMENT_kaznachey_MERCHANT_ID" default="" description="VMPAYMENT_kaznachey_MERCHANT_ID_DESC" />
+	<param type="text" name="secret_key" size="50" label="VMPAYMENT_kaznachey_SECRET_KEY" default="" description="VMPAYMENT_kaznachey_SECRET_KEY_DESC" />  
+	<param name="status_pending" type="vmorderstate" scope="com_virtuemart" default="P" label="VMPAYMENT_kaznachey_STATUS_PENDING" description="VMPAYMENT_kaznachey_STATUS_PENDING_DESC" />
+	<param name="status_success" type="vmorderstate" scope="com_virtuemart" default="C" label="VMPAYMENT_kaznachey_STATUS_SUCCESS" description="VMPAYMENT_kaznachey_STATUS_SUCCESS_DESC" />
+	<param name="status_canceled" type="vmorderstate" scope="com_virtuemart" default="X" label="VMPAYMENT_kaznachey_STATUS_FAILED" description="VMPAYMENT_kaznachey_STATUS_FAILED_DESC" />
+	<param name="countries" type="vmcountries"  scope="com_virtuemart" default="" label="VMPAYMENT_STANDARD_COUNTRIES" description="VMPAYMENT_STANDARD_COUNTRIES_DESC"/>
+	<param name="payment_currency" type="vmacceptedcurrency" default="" label="VMPAYMENT_STANDARD_CURRENCY" description="VMPAYMENT_STANDARD_CURRENCY_DESC" />
+    </params>
+</install>
